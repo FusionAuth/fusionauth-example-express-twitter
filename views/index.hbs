@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+
+{{#if authenticated}}
+  <p>You are logged in!</p>
+  <p>
+    You can now visit the super secure <a href="/users/me">members only area</a>
+  </p> 
+{{else}}
+  <p>
+    <a href="/login">Login Here</a>
+  </p>
+{{/if}}
