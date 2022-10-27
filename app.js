@@ -84,7 +84,14 @@ app.get(
     res.redirect("/");
   }
 );
+
 app.use('/users', ensureLoggedIn('/login'), usersRouter);
+
+/* logout home page. */
+app.get('/logout', function (req, res, next) {
+  req.session.destroy();
+  res.redirect(302, '/');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
